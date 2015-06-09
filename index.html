@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://50df39cf1ff06ee2b590-6135bed6c599dc7ad437e065c1d165d2.r46.cf1.rackcdn.com/stylesheets/stylesheet.css">
+    
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    
+    <!-- Star Rating JS -->
+    <script src="http://50df39cf1ff06ee2b590-6135bed6c599dc7ad437e065c1d165d2.r46.cf1.rackcdn.com/javascripts/star-rating.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="http://50df39cf1ff06ee2b590-6135bed6c599dc7ad437e065c1d165d2.r46.cf1.rackcdn.com/stylesheets/star-rating.min.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://b51a8ff2cfb1f3fc06d7-6135bed6c599dc7ad437e065c1d165d2.ssl.cf1.rackcdn.com/stylesheets/custom_front.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" media="all" href="https://b51a8ff2cfb1f3fc06d7-6135bed6c599dc7ad437e065c1d165d2.ssl.cf1.rackcdn.com/stylesheets/automic.css">
+
+    <title>HDP-TIH - Advanced Dependency Condition</title>
+    
+  </head>
+
+
+<body id="ghpages">
+<div id="wrapper">
+<div id="header">
+<header>
+
+<div role="navigation" class="navbar navbar-default navbar-fixed-top" id="nav-strip">
+	<div class="bottom-nav ">
+	  <div class="row">
+	    <div class="container">
+              <dl class="dropdown nav navbar-nav navbar-right">
+                <div class="dp"></div>
+              </dl> 
+	      <div class="col-sm-3">
+		<a class="navbar-brand" href="http://www.automic.com/">
+		  
+		  <img class="image-logo" src="https://a5616ff0bb354f2460a0-9c1a2e36fc783cc4c58ab6184c27cf6b.ssl.cf1.rackcdn.com/white_logo.png" alt="">
+		  
+		</a>
+	      </div>
+	      <div class="col-sm-9">
+		<div class="navbar-header">
+		  <button data-target=".topheader" data-toggle="collapse" class="navbar-toggle" type="button">
+		    <span class="sr-only">Toggle navigation</span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+		</div>
+		<div style=" position: relative; top: 20px;" class="navbar-collapse topheader collapse">
+                  <!--/ 	<span class="glyphicon glyphicon-user start"></span>-->
+                    <ul class="nav navbar-nav front">
+					  <li class="m-home"><a href="https://marketplace.automic.com" target="_blank">Marketplace</a></li>
+                      <li><a href="http://docs.automic.com" target="_blank">Documentation</a></li>
+                      <li><a href="https://community.automic.com" target="_blank">Community</a></li>
+                    </ul>
+		</div><!--/.nav-collapse -->
+              </div><!--/.span-12 -->
+	    </div><!--/.row -->
+	  </div>
+      </div>
+</div>
+   
+</header>
+</div>
+
+ <!-- MAIN CONTENT -->
+    <div id="content">
+      <div class="container">
+
+          
+	<div class="row">
+	  <div>
+	    <h1>HDP-TIH - Advanced Dependency Condition</h1>
+	  </div>
+	</div>
+	<div class="row">
+	  <div>
+	    <h2>Adds advanced conditions for uproc jobs.</h2>
+	  </div>    
+	</div>
+      </div>
+    
+      <div class="container main_body">
+	<div class="row">
+	  
+	  <div class="col-md-8">
+	      <div class="row tabs">
+	      <ul class="nav nav-tabs">
+		<li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+		<li><a href="#contents" data-toggle="tab">Contents</a></li>
+		<li><a href="#compatibility" data-toggle="tab">Compatibility</a></li>
+		<li><a href="#credits" data-toggle="tab">Credits</a></li>
+	      </ul>
+	      
+	    <!-- Tab contents -->  
+	    <div class="tab-content"> 
+	      <div id="overview" class="tab-pane active">
+		<div class="row">
+		  <div class="col-md-12 description">
+		    <h3>Description</h3>
+		    <p><p><strong class="bbc">ENGLISH DESCRIPTION :</strong><br />In $U, dependency condition on HDP uproc only offers 2 options : "<strong class="bbc"><em class="bbc">All required</em></strong>" and "<em class="bbc"><strong class="bbc">One is enough</strong></em>"<br /><br /></p>
+<p><strong class="title">Target environments:</strong> Any perl environment</p>
+<p><strong class="title">Prerequisites:</strong> Any $U that can launch perl script</p>
+<p><strong class="title">Implementation:</strong> This script is intended to be the code of the uproc</p>
+<p><br />&nbsp;<br />This script, which must be the code of the conditioned uproc, allow to :<br /><br /><br /></p>
+<p class="bbc_indent" style="margin-left: 40px;">- handle one or many HDP uprocs as dependencies conditions</p>
+<p class="bbc_indent" style="margin-left: 40px;">- wait that all HDP uprocs are "COMPLETED" or "ABORTED"</p>
+<p class="bbc_indent" style="margin-left: 40px;">- [OPTIONAL] : specify a minimum percentage of required "COMPLETED" uprocs. The percentage is global (whatever is the number of HDP uprocs)</p>
+<p>&nbsp;<br />Functioning of the script :</p>
+<p class="bbc_indent" style="margin-left: 40px;">1 - The script will analyze the T_TARGET&lt;N&gt; variables in order to verify if all uprocs and MUT exist</p>
+<p class="bbc_indent" style="margin-left: 40px;">2 - Check every uproc status</p>
+<p class="bbc_indent" style="margin-left: 40px;">3 - Wait 'N' seconds before doing a new check</p>
+<p class="bbc_indent" style="margin-left: 40px;">4 - As soon as all uprocs will be "COMPLETED" or "ABORTED" (And if the value of the required percentage is different from zero), the script will calculate the percentage of "COMPLETED" uproc and determine its own status ("COMPLETED" or "ABORTED")</p>
+<p>&nbsp;<br />Setup :<br />Paste the content of the text file as the end session' uproc content (CL_INT). The end session uproc should be set as a OK son of the header uproc.<br /><br />&nbsp;<br />Uproc' variables :</p>
+<p class="bbc_indent" style="margin-left: 40px;">- <strong class="bbc">T_WAIT </strong>: waiting time between each check (seconds)</p>
+<p class="bbc_indent" style="margin-left: 40px;">- <strong class="bbc">T_PERCENT</strong> : minimum percentage of "COMPLETED" uproc required</p>
+<p class="bbc_indent" style="margin-left: 40px;">- <strong class="bbc">T_TARGET&lt;N&gt;</strong> (N going from 0 to N) : couple &lt;Uproc/Management Unit Type) to monitore. Format : &lt;UPROC&gt;;&lt;MUT&gt;</p>
+<p><br />&nbsp;<br />NOTES :&nbsp;<br />1 ) At each check run, the script will write into the job log which uproc is not yet "COMPLETED" or "ABORTED".<br />If you want to remove this feature, you just have to delete / comment line 64.<br /><br />&nbsp;<br />2 ) Variables T_TARGET&lt;N&gt; must begin with N equal to 0. Figures have to follow itself.<br />&nbsp;<br />====================================================================================<br /><strong class="bbc">DESCRIPTION EN FRANCAIS :</strong><br />Dans $U, la gestion des conditions d'enchainement sur une uproc en TIH n'offre que 2 options : "<strong class="bbc">Toutes n&eacute;cessaires</strong>" et "<strong class="bbc">Une suffisante</strong>"<br /><br />Ce script, plac&eacute; dans le code de l'uproc qui doit avoir cette condition d'enchainement, permet de :</p>
+<p class="bbc_indent" style="margin-left: 40px;">- conditionner de 1 &agrave; N uproc tournant en TIH</p>
+<p class="bbc_indent" style="margin-left: 40px;">- d'attendre que toutes les uprocs en TIH soient au status "COMPLETED" ou "ABORTED"</p>
+<p class="bbc_indent" style="margin-left: 40px;">- [OPTIONNEL] : de sp&eacute;cifier un pourcentage minimun global requis (au cas ou plusieurs uprocs en TIH soient attendues) d'uproc au status "COMPLETED"</p>
+<p>&nbsp;<br />Fonctionnement du script :</p>
+<p class="bbc_indent" style="margin-left: 40px;">1 - Le script va analyser les variables contenant les couples &lt;Uproc/Type d'unit&eacute; de gestion&gt; &agrave; surveiller afin de v&eacute;rifier que les Uprocs et les MUT existent bien</p>
+<p class="bbc_indent" style="margin-left: 40px;">2 - Controler pour chaque Uproc son status</p>
+<p class="bbc_indent" style="margin-left: 40px;">3 - Attendre 'N' secondes avant de refaire un contr&ocirc;le</p>
+<p class="bbc_indent" style="margin-left: 40px;">4 - Quand toutes les uprocs seront en "COMPLETED" ou "ABORTED" (et si un pourcentage est sp&eacute;cifi&eacute;), calculer le pourcentage d'uproc en "COMPLETED" et d&eacute;terminer son status ("COMPLETED" ou "ABORTED") selon le r&eacute;sultat</p>
+<p>&nbsp;<br />Mise en place :<br />Copier le contenu du fichier dans le code l'uproc de fin de la session et la mettre comme fils normal de l'uproc d'en-t&ecirc;te<br /><br />&nbsp;<br />Variables d'uproc :</p>
+<p class="bbc_indent" style="margin-left: 40px;">- <strong class="bbc">T_WAIT</strong> : temps d'attente entre chaque v&eacute;rification (en secondes)</p>
+<p class="bbc_indent" style="margin-left: 40px;">- <strong class="bbc">T_PERCENT</strong> : pourcentage d'uproc en "COMPLETED" requis</p>
+<p class="bbc_indent" style="margin-left: 40px;">- <strong class="bbc">T_TARGET&lt;N&gt;</strong> (N allant de 0 &agrave; N) : couple &lt;Uproc/Type d'unit&eacute; de gestion) &agrave; surveiller. Format : &lt;UPROC&gt;;&lt;MUT&gt;4</p>
+<p><br />&nbsp;<br />NOTES :&nbsp;<br />1 ) le script indique pour chaque contr&ocirc;le, quelles sont les uprocs qui ne sont pas au status "COMPLETED" ou "ABORTED".<br />Si vous souhaitez d&eacute;sactiver cette fonction, il suffit de supprimer / commenter la ligne 64 du script.<br /><br />2 ) Les variables T_TARGET&lt;N&gt; doivent se suivre et commencer &agrave; 0. Il ne doit pas y avoir de trou dans la num&eacute;rotation.</p></p>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-md-12 media">
+		  <h3>Media</h3>
+		  <p>[MEDIA]</p>
+		  </div>
+		</div>
+	      </div>
+	      
+	      <div id="contents" class="tab-pane">
+		<div class="row">
+		  <h3>Contents of Package</h3>
+		  <ul>
+		    <li>tih_advanced_dependency_v2.txt.zip</li>
+		  </ul>
+		  <div class="downloads_buttons" style="margin-top:50px;font-size:1.2em;">
+		    <a class="download_zip dl" href="https://github.com/automic-community/HDP-TIH---Advanced-Dependency-Condition/zipball/master">Download .zip</a>
+			<br><br>
+		    <a class="download_tar dl" href="https://github.com/automic-community/HDP-TIH---Advanced-Dependency-Condition/tarball/master">Download .tar</a>  
+		  </div>
+		</div>
+	      </div>
+	      
+	      <div id="compatibility" class="tab-pane">
+		<div class="row">
+		<h3>Compatibility</h3>
+		  <div class="row">
+		    <div class="col-md-6">
+		      <h4 class="comp-product">Platform</h4>
+		      <div class="list">
+			<a href="http://marketplace.automic.com/marketplace/browse#category/Dollar Universe - UniJob">Dollar Universe - UniJob<span class="comma">,</span></a>
+		      </div>
+		    </div>
+		    <div class="col-md-6">
+		      <h4 class="comp-versions">Versions</h4>
+		      <div class="list">
+			 <a href="http://marketplace.automic.com/marketplace/browse#version/5.x">5.x<span class="comma">,</span></a> <a href="http://marketplace.automic.com/marketplace/browse#version/6.x">6.x<span class="comma">,</span></a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="row">
+		    <div class="col-md-6">
+		      <h4 class="comp-platforms">Operating Systems</h4>
+		      <div class="list">
+			
+		      </div>
+		    </div>
+		    <div class="col-md-6">
+		      <h4 class="comp-apps">Applications</h4>
+		      <div class="list">
+			
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      
+	      <div id="credits" class="tab-pane">
+		<div class="row">
+		<h3>Created by....</h3>
+		<div>
+		  Created By:  , 
+		</div>
+		</div>
+	      </div>
+	      
+	    </div>
+	    <!-- End of Tabbed Content -->
+	    </div>
+	      
+	    
+	<!-- Pulled out Comment code -->   
+	  
+	  </div>
+	  
+	  <div class="col-md-3 col-md-offset-1" style="top: -33px;">
+	    
+	      <div class="row d-links">
+		<div class="down-t">Downloads</div>
+		<a class="zip_download_link dl" href="https://github.com/Automic-Community/HDP-TIH---Advanced-Dependency-Condition/zipball/master">Download this project as a .zip file</a>
+		<a class="tar_download_link dl" href="https://github.com/Automic-Community/HDP-TIH---Advanced-Dependency-Condition/tarball/master">Download this project as a tar.gz file</a>
+	      </div>
+
+	      <div class="row rating">
+
+		<a class="forkme" href="https://github.com/Automic-Community/HDP-TIH---Advanced-Dependency-Condition">View on GitHub</a>
+		 
+	  	 
+		<div class="social-buttons">
+		  <a target="_blank" class="share-btn twitter" href="http://twitter.com/share?url=http://automic-community.github.io/HDP-TIH---Advanced-Dependency-Condition&text=Check%20out%20this%20awesome%20Template%20on%20the%20%23AutomicCommunity%20eXchange&via=automic">
+		    <i class="fa fa-twitter"></i>
+		  </a>
+		  <a target="_blank" class="share-btn linkedin" href="http://www.linkedin.com/shareArticle?url=url=http://automic-community.github.io/HDP-TIH---Advanced-Dependency-Condition&title=HDP-TIH - Advanced Dependency Condition&summary=Adds advanced conditions for uproc jobs.&source=url=http://github.com/automic-community/HDP-TIH---Advanced-Dependency-Condition">
+		    <i class="fa fa-linkedin"></i>
+		  </a>
+		  <a target="_blank" class="share-btn facebook" href="http://www.facebook.com/sharer/sharer.php?u=http://automic-community.github.io/HDP-TIH---Advanced-Dependency-Condition">
+		    <i class="fa fa-facebook-square"></i>
+		  </a>
+		  <a target="_blank" class="share-btn google-plus" href="https://plus.google.com/share?url=http://automic-community.github.io/HDP-TIH---Advanced-Dependency-Condition">
+		    <i class="fa fa-google-plus-square"></i>
+		  </a>
+		  <a target="_blank" class="share-btn email" href="mailto:?subject=Check%20out%20this%20awesome%20Template%20on%20the%20%23AutomicCommunity%20eXchange&body=Adds advanced conditions for uproc jobs." >
+		    <i class="fa fa-envelope"></i>
+		  </a>
+		</div>
+
+	      </div>
+	   
+	    
+	    <div class="row tags">
+	      <div class="comp-type">
+		Template
+	      </div>
+	      <div class="comp-product">
+		<a href="http://marketplace.automic.com/marketplace/browse#category/Dollar Universe - UniJob">Dollar Universe - UniJob<span class="comma">,</span></a>
+	      </div>
+	      <div class="comp-versions">
+	       <a href="http://marketplace.automic.com/marketplace/browse#version/5.x">5.x<span class="comma">,</span></a> <a href="http://marketplace.automic.com/marketplace/browse#version/6.x">6.x<span class="comma">,</span></a>
+	      </div>
+	      <div class="comp-platforms">
+		
+	      </div>
+	      <div class="comp-apps">
+		
+	      </div>
+	    </div>
+	      
+	    <div class="row help">
+		<a class="supported" href="#">Community Supported</a>
+		<div class="ask">
+		  <a href="https://community.automic.com" target="_blank" class="btn">Ask the Community</a>
+		</div>
+		<p>
+		  Converse with your fellow Users in the <a href="http://community.automic.com">Community</a>.
+		</p>
+	    </div>
+	    
+	  </div>
+	
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-3 col-md-offset-9">
+	    <div class="copyright">
+	      <h4>Copyright and License</h4>
+	      <p>
+		Solutions, Templates and other content created by the Automic Community and available on the Automic Marketplace is subject to the standard Community <a href="http://automic.com/community-terms-of-service">Terms of Service</a>. 
+		Automic does not support, maintain or warrant any Solution, Templates and/or other content created by the Automic Community on the Automic Marketplace.
+	      </p>
+	    </div>
+	  </div>
+	</div>
+	
+      </div>
+    </div>
+  
+  <div id="footer">
+  <footer>
+    <div class="container">
+      <!-- FOOTER  -->
+      <div class="row"> 
+	  <div class="copyright">
+	    Package maintained by the <a href="https://github.com/Automic-Community">Automic-Community</a> GitHub Org
+	  </div>
+	  <div>
+	    Published by the <a href="https://community.automic.com">Automic Think Tank</a>
+	  </div>
+      </div>
+    </div>
+  </footer>
+</div>
+  
+    </div>
+  </body>
+</html>
